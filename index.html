@@ -20,6 +20,26 @@
     @keyframes floaty { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-14px); } }
     @keyframes pulse-ring { 0% { transform: scale(0.9); opacity: .5; } 100% { transform: scale(1.4); opacity: 0; } }
     ::selection { background: #1F9D6B; color: #fff; }
+    @media (max-width: 860px) {
+      .nav-cta { padding:9px 16px !important; font-size:13px !important; }
+      .nav-logo { height:26px !important; }
+      .hero-wrap { grid-template-columns: 1fr !important; text-align:center; padding:40px 6vw 32px !important; }
+      .hero-copy { max-width:none !important; margin-left:auto; margin-right:auto; }
+      .hero-badge { margin-left:auto; margin-right:auto; }
+      .hero-ctas { justify-content:center !important; }
+      .hero-art { order:-1; margin-bottom:8px; }
+      .stat-card { top:2% !important; right:6% !important; padding:10px 14px !important; }
+      .problem-grid, .benefits-grid, .contact-grid { grid-template-columns: 1fr !important; }
+      .how-grid { grid-template-columns: repeat(2,1fr) !important; }
+      .section-pad { padding-left:6vw !important; padding-right:6vw !important; }
+      .contact-copy { white-space:normal !important; }
+      .footer-row { justify-content:center !important; text-align:center; }
+    }
+    @media (max-width: 520px) {
+      .how-grid { grid-template-columns: 1fr !important; }
+      .hero-ctas a { width:100%; text-align:center; }
+      .hero-ctas { flex-direction:column !important; }
+    }
   </style>
 </helmet>
 
@@ -27,10 +47,10 @@
 
   <!-- NAV -->
   <div style="position:sticky;top:0;z-index:50;background:rgba(255,255,255,0.92);backdrop-filter:blur(8px);border-bottom:1px solid #e4e9e7;display:flex;align-items:center;justify-content:space-between;padding:14px 5vw;">
-    <img src="assets/onegate-logo-horizontal.svg" alt="OneGate" style="height:32px;width:auto;object-fit:contain;">
+    <img src="assets/onegate-logo-horizontal.svg" alt="OneGate" class="nav-logo" style="height:32px;width:auto;object-fit:contain;">
     <div style="display:flex;align-items:center;gap:28px;">
       <a href="#how" style="font-size:14px;font-weight:500;color:#2a3530;display:none" class="nav-link">How it works</a>
-      <a href="#contact" style="background:#1F9D6B;color:#fff;padding:10px 22px;border-radius:100px;font-size:14px;font-weight:600;box-shadow:0 4px 14px rgba(31,157,107,0.3);">ติดต่อเรา · Contact</a>
+      <a href="#contact" class="nav-cta" style="background:#1F9D6B;color:#fff;padding:10px 22px;border-radius:100px;font-size:14px;font-weight:600;box-shadow:0 4px 14px rgba(31,157,107,0.3);">ติดต่อเรา · Contact</a>
     </div>
   </div>
 
@@ -38,9 +58,9 @@
   <div style="position:relative;background:linear-gradient(160deg,#0e5c3f 0%,#1F9D6B 55%,#22b578 100%);padding:56px 5vw 40px;overflow:hidden;">
     <div style="position:absolute;right:-10%;top:-20%;width:520px;height:520px;border-radius:50%;background:rgba(255,255,255,0.06);"></div>
     <div style="position:absolute;left:-8%;bottom:-25%;width:420px;height:420px;border-radius:50%;background:rgba(255,255,255,0.05);"></div>
-    <div style="max-width:1240px;margin:0 auto;display:grid;grid-template-columns:1.15fr 0.85fr;gap:40px;align-items:center;position:relative;z-index:2;">
-      <div>
-        <div style="display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,0.14);border:1px solid rgba(255,255,255,0.3);padding:6px 14px;border-radius:100px;color:#fff;font-size:12px;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:22px;">
+    <div class="hero-wrap" style="max-width:1240px;margin:0 auto;display:grid;grid-template-columns:1.15fr 0.85fr;gap:40px;align-items:center;position:relative;z-index:2;">
+      <div class="hero-copy">
+        <div class="hero-badge" style="display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,0.14);border:1px solid rgba(255,255,255,0.3);padding:6px 14px;border-radius:100px;color:#fff;font-size:12px;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:22px;">
           <span style="width:7px;height:7px;border-radius:50%;background:#8CFFC9;display:inline-block;"></span>
           AI Document &amp; Vision Gateway
         </div>
@@ -53,15 +73,15 @@
         <p style="font-size:13px;color:rgba(255,255,255,0.6);font-weight:300;font-style:italic;margin:0 0 32px;">
           "Connect AI once — use it across every system"
         </p>
-        <div style="display:flex;gap:14px;flex-wrap:wrap;">
+        <div class="hero-ctas" style="display:flex;gap:14px;flex-wrap:wrap;">
           <a href="#contact" style="background:#fff;color:#0e5c3f;padding:14px 30px;border-radius:100px;font-weight:700;font-size:15px;box-shadow:0 6px 20px rgba(0,0,0,0.18);">ติดต่อทีมงาน · Get in touch</a>
           <a href="#how" style="border:1.5px solid rgba(255,255,255,0.5);color:#fff;padding:14px 30px;border-radius:100px;font-weight:600;font-size:15px;">ดูวิธีการทำงาน ↓</a>
         </div>
       </div>
-      <div style="position:relative;display:flex;justify-content:center;">
+      <div class="hero-art" style="position:relative;display:flex;justify-content:center;">
         <div style="position:absolute;width:280px;height:280px;border-radius:50%;border:2px solid rgba(255,255,255,0.25);animation:pulse-ring 2.8s ease-out infinite;"></div>
         <img src="assets/hero-mascot.png" alt="OneGate mascot" style="width:min(360px,92%);height:auto;position:relative;z-index:2;animation:floaty 5s ease-in-out infinite;filter:drop-shadow(0 20px 40px rgba(0,0,0,0.3));">
-        <div style="position:absolute;top:8%;right:2%;background:#fff;border-radius:16px;padding:14px 20px;box-shadow:0 10px 30px rgba(0,0,0,0.2);z-index:3;">
+        <div class="stat-card" style="position:absolute;top:8%;right:2%;background:#fff;border-radius:16px;padding:14px 20px;box-shadow:0 10px 30px rgba(0,0,0,0.2);z-index:3;">
           <div style="font-size:10px;letter-spacing:1.5px;color:#7C8A83;text-transform:uppercase;font-weight:700;">ลดเวลาตรวจสอบ</div>
           <div style="font-size:28px;font-weight:800;color:#1F9D6B;line-height:1.2;">&gt;80%</div>
           <div style="font-size:10px;color:#7C8A83;">ต่อใบงาน</div>
@@ -79,12 +99,12 @@
   </div>
 
   <!-- PROBLEM / SOLUTION -->
-  <div style="max-width:1140px;margin:0 auto;padding:72px 5vw 20px;">
+  <div class="section-pad" style="max-width:1140px;margin:0 auto;padding:72px 5vw 20px;">
     <div style="text-align:center;margin-bottom:44px;">
       <div style="font-size:12px;font-weight:700;letter-spacing:3px;color:#1F9D6B;text-transform:uppercase;margin-bottom:10px;">Problem · Solution</div>
       <h2 style="font-size:clamp(24px,3vw,36px);font-weight:700;margin:0;color:#141A17;">ทำไมต้อง OneGate</h2>
     </div>
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:28px;">
+    <div class="problem-grid" style="display:grid;grid-template-columns:1fr 1fr;gap:28px;">
       <div style="background:#fff8f8;border-left:4px solid #d94f4f;border-radius:12px;padding:32px;">
         <div style="display:inline-block;font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;background:#d94f4f;color:#fff;padding:4px 12px;border-radius:6px;margin-bottom:16px;">ปัญหา · Problem</div>
         <h3 style="font-size:20px;font-weight:600;margin:0 0 12px;line-height:1.35;">ตรวจสอบด้วยมือ ช้า และผิดพลาดสูง</h3>
@@ -99,12 +119,12 @@
   </div>
 
   <!-- HOW IT WORKS -->
-  <div id="how" style="max-width:1140px;margin:0 auto;padding:88px 5vw 60px;scroll-margin-top:80px;">
+  <div id="how" class="section-pad" style="max-width:1140px;margin:0 auto;padding:88px 5vw 60px;scroll-margin-top:80px;">
     <div style="text-align:center;margin-bottom:52px;">
       <div style="font-size:12px;font-weight:700;letter-spacing:3px;color:#1F9D6B;text-transform:uppercase;margin-bottom:10px;">How It Works</div>
       <h2 style="font-size:clamp(24px,3vw,36px);font-weight:700;margin:0;color:#141A17;">ผสานการทำงานร่วมกับ 6 โมดูล</h2>
     </div>
-    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:22px;">
+    <div class="how-grid" style="display:grid;grid-template-columns:repeat(3,1fr);gap:22px;">
       <div style="background:#f4f7f5;border-radius:14px;padding:30px 24px;">
         <span class="material-icons" style="font-size:34px;color:#1F9D6B;">document_scanner</span>
         <h3 style="font-size:17px;font-weight:600;margin:14px 0 2px;color:#141A17;">OCR Engine</h3>
@@ -148,13 +168,13 @@
   </div>
 
   <!-- BENEFITS -->
-  <div style="background:#0e5c3f;padding:84px 5vw;">
+  <div class="section-pad" style="background:#0e5c3f;padding:84px 5vw;">
     <div style="max-width:1140px;margin:0 auto;">
       <div style="text-align:center;margin-bottom:48px;">
         <div style="font-size:12px;font-weight:700;letter-spacing:3px;color:#8CFFC9;text-transform:uppercase;margin-bottom:10px;">Key Benefits</div>
         <h2 style="font-size:clamp(24px,3vw,36px);font-weight:700;margin:0;color:#fff;">ประโยชน์ที่ได้รับ</h2>
       </div>
-      <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:20px 40px;">
+      <div class="benefits-grid" style="display:grid;grid-template-columns:repeat(2,1fr);gap:20px 40px;">
         <div style="display:flex;gap:14px;align-items:flex-start;">
           <span style="flex-shrink:0;width:28px;height:28px;background:rgba(255,255,255,0.15);border-radius:50%;display:flex;align-items:center;justify-content:center;color:#8CFFC9;font-weight:700;">✓</span>
           <p style="margin:0;color:rgba(255,255,255,0.9);font-size:15.5px;line-height:1.6;">ลดความผิดพลาดจากการกรอกข้อมูลด้วยมือได้มากกว่า 80%</p>
@@ -176,11 +196,11 @@
   </div>
 
   <!-- CONTACT -->
-  <div id="contact" style="max-width:820px;margin:0 auto;padding:88px 5vw;text-align:center;scroll-margin-top:60px;">
+  <div id="contact" class="section-pad" style="max-width:820px;margin:0 auto;padding:88px 5vw;text-align:center;scroll-margin-top:60px;">
     <div style="font-size:12px;font-weight:700;letter-spacing:3px;color:#1F9D6B;text-transform:uppercase;margin-bottom:10px;">Contact</div>
     <h2 style="font-size:clamp(24px,3vw,34px);font-weight:700;margin:0 0 14px;color:#141A17;">สนใจ OneGate ติดต่อทีมงาน</h2>
-    <p style="font-size:15.5px;color:#7C8A83;font-weight:300;line-height:1.7;max-width:none;white-space:nowrap;margin:0 auto 40px;">ทีมพัฒนา OneGate ยินดีให้คำปรึกษา, ข้อมูลเพิ่มเติมเกี่ยวกับการนำไปใช้กับงานจริง และแผนขยายผลสู่กลุ่มบริษัท</p>
-    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:20px;">
+    <p class="contact-copy" style="font-size:15.5px;color:#7C8A83;font-weight:300;line-height:1.7;max-width:none;white-space:nowrap;margin:0 auto 40px;">ทีมพัฒนา OneGate ยินดีให้คำปรึกษา, ข้อมูลเพิ่มเติมเกี่ยวกับการนำไปใช้กับงานจริง และแผนขยายผลสู่กลุ่มบริษัท</p>
+    <div class="contact-grid" style="display:grid;grid-template-columns:repeat(3,1fr);gap:20px;">
       <div style="background:#f4f7f5;border-radius:14px;padding:26px 18px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;min-height:150px;">
         <img src="assets/chach.jpg" alt="Chachchai Tongthavornsuwan" style="width:64px;height:64px;border-radius:50%;object-fit:cover;margin-bottom:12px;">
         <div style="font-size:14.5px;font-weight:600;color:#141A17;margin-bottom:4px;">Chachchai Tongthavornsuwan</div>
@@ -203,7 +223,7 @@
   </div>
 
   <!-- FOOTER -->
-  <div style="background:#141A17;padding:28px 5vw;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px;">
+  <div class="footer-row section-pad" style="background:#141A17;padding:28px 5vw;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px;">
     <div style="font-size:11px;color:rgba(255,255,255,0.4);letter-spacing:1px;">Copyright &copy; Siam Kubota Co.,Ltd.</div>
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 460 132" width="120" height="34" role="img" aria-label="OneGate">
       <g transform="translate(4 6) scale(1)" fill="none">
