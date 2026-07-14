@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 460 132" width="460" height="132" role="img" aria-label="OneGate">
+  <defs></defs>
+  <g transform="translate(4 6) scale(1)" fill="none">
+    <path d="M98.8 39.3 A44 44 0 1 0 98.8 80.7" fill="none" stroke="#1F9D6B" stroke-width="13" stroke-linecap="round"></path>
+    <path d="M62 60 h30 m-11 -10 l11 10 -11 10" fill="none" stroke="#141A17" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"></path>
+  </g>
+  <text x="140" y="87" font-family="&#39;Kanit&#39;, sans-serif" font-weight="700" font-size="66" letter-spacing="-0.5">
+    <tspan fill="#141A17">One</tspan><tspan fill="#1F9D6B">Gate</tspan>
+  </text>
+</svg>
